@@ -1,12 +1,13 @@
-﻿using HorecaGhent.Models;
-using HorecaGhent.Repositories;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Linq;
 using System.Text;
+using System.ComponentModel;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using Xamarin.Forms;
+
+using HorecaGhent.Models;
+using HorecaGhent.Repositories;
 
 namespace HorecaGhent
 {

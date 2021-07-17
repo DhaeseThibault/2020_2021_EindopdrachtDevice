@@ -36,9 +36,6 @@ namespace HorecaGhent.Models
             PhoneNumber = (string)fieldData.SelectToken("telefoonnummer");
             SiteURL = (string)fieldData.SelectToken("link");
             ImageURL = (string)fieldData.SelectToken("image_path");
-
-
-
         }
     }
 }

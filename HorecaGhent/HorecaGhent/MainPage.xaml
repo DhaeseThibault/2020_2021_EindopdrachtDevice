@@ -4,12 +4,27 @@
              x:Class="HorecaGhent.MainPage" NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
-        <Grid BackgroundColor="SteelBlue">
+        <Grid RowSpacing="0" BackgroundColor="SteelBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="56"/>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <BoxView BackgroundColor="LightSkyBlue"/>
+                <Label Text="Horeca Ghent" FontSize="40" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <BoxView BackgroundColor="#696969"/>
+            </Grid>
+
             <ListView x:Name="lvwRestaurants">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label Text="Hello" TextColor="Red"/>
+                            <Label Text="{Binding Name}" TextColor="Red"/>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
