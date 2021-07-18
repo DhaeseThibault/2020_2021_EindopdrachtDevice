@@ -1,36 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HorecaGhent.MainPage" NavigationPage.HasNavigationBar="False">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="HorecaGhent.MainPage" 
+             xmlns:controls="clr-namespace:BikeGates.Models"
+             NavigationPage.HasNavigationBar="False" BackgroundColor="#000000">
 
-    <ContentPage.Content>
-        <Grid RowSpacing="0" BackgroundColor="SteelBlue">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="56"/>
-                <RowDefinition Height="2"/>
-                <RowDefinition Height="80"/>
-            </Grid.RowDefinitions>
-
-            <Grid Grid.Row="0">
-                <BoxView BackgroundColor="LightSkyBlue"/>
-                <Label Text="Horeca Ghent" FontSize="40" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
-            </Grid>
-
-            <Grid Grid.Row="1">
-                <BoxView BackgroundColor="#696969"/>
-            </Grid>
-
-            <ListView x:Name="lvwRestaurants">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Label Text="{Binding Name}" TextColor="Red"/>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+    <StackLayout BackgroundColor="#171721">
+        <!--Topbar-->
+        <Grid>
+        <BoxView BackgroundColor="DarkOrange" HeightRequest="100"/>
+            <Label Text="Horeca Ghent" FontSize="40" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
         </Grid>
-       
-    </ContentPage.Content>
+
+        <Grid HeightRequest="2" Margin="0,-6,0,0">
+            <BoxView BackgroundColor="White"/>
+        </Grid>
+
+        <!--Filter for type of kitchen-->
+        <Label Text="Type of takeaway" FontSize="20" TextColor="White" FontAttributes="Bold" Margin="32,8,0,0"/>
+        <controls:CustomPicker HorizontalOptions="Fill" VerticalOptions="Start"
+                    HeightRequest="50" 
+                    Image="ic_arrow_drop_down"
+                    Title="Takeaway or delivery?" TextColor="White" TitleColor="White"
+                    Margin="32,0,32,0"
+                    x:Name="pckTakeaway" SelectedIndexChanged="pckChoosen_Takeaway">
+            <controls:CustomPicker.Items>
+                <x:String>Delivery</x:String>
+                <x:String>Takeaway</x:String>
+            </controls:CustomPicker.Items>
+        </controls:CustomPicker>
+            
+        <!--Overview of every horeca in Ghent-->
+        <Frame Margin="32,8,32,32" BackgroundColor="Silver" CornerRadius="20" HasShadow="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Text="Restaurants:" FontSize="20" FontAttributes="Bold" TextColor="Black" Margin="0,0,0,8"/>
+                <ListView Grid.Row="1" x:Name="lvwRestaurants" SeparatorColor="Black" RowHeight="70">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid VerticalOptions="Center">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="25"/>
+                                        <RowDefinition Height="25"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <Label Grid.Row="0" Grid.ColumnSpan="4" Text="{Binding Name}"  FontSize="20" TextColor="Black" Margin="0,0,0,-8"/>
+
+                                    <Label Grid.Row="1" Grid.Column="0" Text="Kitchen type:" FontSize="15" TextColor="#2D2D2D"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding Kitchen}" FontSize="15" TextColor="#2D2D2D"/>
+                                </Grid>
+                                
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Frame>
+
+    </StackLayout>
 
 </ContentPage>

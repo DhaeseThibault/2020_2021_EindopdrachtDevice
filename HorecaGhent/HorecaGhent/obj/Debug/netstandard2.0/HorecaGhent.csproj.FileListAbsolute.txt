@@ -1,6 +1,5 @@
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\bin\Debug\netstandard2.0\HorecaGhent.deps.json
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\bin\Debug\netstandard2.0\HorecaGhent.dll
-C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\Debug\netstandard2.0\HorecaGhent.csprojAssemblyReference.cache
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\Debug\netstandard2.0\HorecaGhent.AssemblyInfoInputs.cache
@@ -12,3 +11,5 @@ C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\Debug\netstandard2.0\HorecaGhent.dll
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\Debug\netstandard2.0\ref\HorecaGhent.dll
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\Debug\netstandard2.0\HorecaGhent.pdb
+C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\Debug\netstandard2.0\Views\Takeaway.xaml.g.cs
+C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\Debug\netstandard2.0\HorecaGhent.csprojAssemblyReference.cache
