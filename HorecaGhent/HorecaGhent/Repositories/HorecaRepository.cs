@@ -24,7 +24,7 @@ namespace HorecaGhent.Repositories
             return client;
         }
 
-        public static async Task<List<Horeca>> GetNamesHoreca()
+        public static async Task<List<Horeca>> GetHorecas()
         {
             try
             {

@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using HorecaGhent.Views;
 
 namespace HorecaGhent
 {
@@ -10,6 +11,7 @@ namespace HorecaGhent
         {
             InitializeComponent();
             MainPage = new NavigationPage(new MainPage());
+            //MainPage = new NavigationPage(new RestaurantInformation());
         }
 
         protected override void OnStart()

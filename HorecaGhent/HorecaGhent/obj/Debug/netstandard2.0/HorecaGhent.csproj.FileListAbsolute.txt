@@ -13,3 +13,4 @@ C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\Debug\netstandard2.0\HorecaGhent.pdb
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\Debug\netstandard2.0\Views\Takeaway.xaml.g.cs
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\Debug\netstandard2.0\HorecaGhent.csprojAssemblyReference.cache
+C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\Debug\netstandard2.0\Views\RestaurantInformation.xaml.g.cs

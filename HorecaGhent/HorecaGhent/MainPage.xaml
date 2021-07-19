@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="HorecaGhent.MainPage" 
              xmlns:controls="clr-namespace:BikeGates.Models"
-             NavigationPage.HasNavigationBar="False" BackgroundColor="#000000">
+             NavigationPage.HasNavigationBar="False">
 
     <StackLayout BackgroundColor="#171721">
         <!--Topbar-->
@@ -38,7 +38,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Text="Restaurants:" FontSize="20" FontAttributes="Bold" TextColor="Black" Margin="0,0,0,8"/>
-                <ListView Grid.Row="1" x:Name="lvwRestaurants" SeparatorColor="Black" RowHeight="70">
+                <ListView Grid.Row="1" x:Name="lvwRestaurants" SeparatorColor="Black" RowHeight="70" ItemSelected="lvwRestaurant_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -57,14 +57,11 @@
                                     <Label Grid.Row="1" Grid.Column="0" Text="Kitchen type:" FontSize="15" TextColor="#2D2D2D"/>
                                     <Label Grid.Row="1" Grid.Column="1" Text="{Binding Kitchen}" FontSize="15" TextColor="#2D2D2D"/>
                                 </Grid>
-                                
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
             </Grid>
         </Frame>
-
     </StackLayout>
-
 </ContentPage>
