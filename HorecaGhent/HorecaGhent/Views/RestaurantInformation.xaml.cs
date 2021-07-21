@@ -28,66 +28,109 @@ namespace HorecaGhent.Views
 
         private async void TestHorecaRepository()
         {
-            lblOffer.Text = "";
-            lblKitchen.Text = "";
+            lblOffers.Text = "";
+            lblKitchens.Text = "";
 
             // Showing the restaurant name in the topbar
-            lblRestaurantName.Text = MainPage.listRestaurantName[0].ToString();
+            lblRestaurantName.Text = MainPage.ListRestaurantName[0].ToString();
 
 
             // Showing all the offers in the body
-            string offer = MainPage.listRestaurantOffer[0].ToString();
-            string[] listOffers = offer.Split(';');
-            for (int i = 0; i < listOffers.Length; i++)
+            string offer = MainPage.ListRestaurantOffer[0].ToString();
+            if (offer != "")
             {
-                lblOffer.Text += "-  " + listOffers[i] + "\n";
+                string[] listOffers = offer.Split(';');
+                for (int i = 0; i < listOffers.Length; i++)
+                {
+                    lblOffers.Text += "-  " + listOffers[i] + "\n";
+                }
             }
+            else
+            {
+                lblOffer.IsVisible = false;
+                lblOffers.IsVisible = false;
+            }
+            
+            
 
 
             // Showing all the kitchen types in the body
-            string kitchen = MainPage.listRestaurantKitchen[0].ToString();
-            string[] listKitchen = kitchen.Split(';');
-            for (int i = 0; i < listKitchen.Length; i++)
+            string kitchen = MainPage.ListRestaurantKitchen[0].ToString();
+            if (kitchen != "")
             {
-                lblKitchen.Text += "-  " + listKitchen[i] + "\n";
+                string[] listKitchen = kitchen.Split(';');
+                for (int i = 0; i < listKitchen.Length; i++)
+                {
+                    lblKitchens.Text += "-  " + listKitchen[i] + "\n";
+                }
             }
+            else
+            {
+                lblKitchen.IsVisible = false;
+                lblKitchens.IsVisible = false;
+            }
+            
 
 
             // Showing the restaurant addresss
-            string address = MainPage.listRestaurantAddress[0].ToString();
-            string zipCode = MainPage.listRestaurantZipCode[0].ToString();
-            string city = MainPage.listRestaurantCity[0].ToString();
+            string address = MainPage.ListRestaurantAddress[0].ToString();
+            string zipCode = MainPage.ListRestaurantZipCode[0].ToString();
+            string city = MainPage.ListRestaurantCity[0].ToString();
 
-            lblAddress.Text = address + ", " + zipCode + " " + city;
-   
+            if (address != "" || zipCode != "" || city != "")
+            {
+                lblAddress.Text = address + ", " + zipCode + " " + city;
+            }
+            else
+            {
+                lblAddressTitle.IsVisible = false;
+                lblAddress.IsVisible = false;
+            }
+
+
+
 
             // Showing the PhoneNumber of the restaurant
-            string phoneNumber = MainPage.listRestaurantPhoneNumber[0].ToString();
-            lblPhoneNumber.Text = phoneNumber;
+            string phoneNumber = MainPage.ListRestaurantPhoneNumber[0].ToString();
+            if (phoneNumber != "")
+            {
+                lblPhoneNumber.Text = phoneNumber;
+            }
+            else
+            {
+                lblPhoneNumber.IsVisible = false;
+            }
 
 
             //Showing the URL of the restaurants site
-            string siteUrl = MainPage.listRestaurantSiteUrl[0].ToString();
-            lblSiteUrl.Text = siteUrl;
+            string siteUrl = MainPage.ListRestaurantSiteUrl[0].ToString();
+            if (siteUrl != "")
+            {
+                lblSiteUrl.Text = siteUrl;
+            }
+            else
+            {
+                lblSiteUrl.IsVisible = false;
+            }
         }
 
         private void PhoneNumberTapped(object sender, EventArgs e)
         {
-            string phoneNumber = MainPage.listRestaurantPhoneNumber[0].ToString();
+            string phoneNumber = MainPage.ListRestaurantPhoneNumber[0].ToString();
             PhoneDialer.Open(phoneNumber);
         }
 
         private void SiteUrlTapped(object sender, EventArgs e)
         {
-            string siteUrl = MainPage.listRestaurantSiteUrl[0].ToString();
+            string siteUrl = MainPage.ListRestaurantSiteUrl[0].ToString();
             Device.OpenUri(new Uri(siteUrl));
         }
 
         private void AddressTapped(object sender, EventArgs e)
         {
-            string address = MainPage.listRestaurantAddress[0].ToString();
-            string zipCode = MainPage.listRestaurantZipCode[0].ToString();
-            string city = MainPage.listRestaurantCity[0].ToString();
+            string address = MainPage.ListRestaurantAddress[0].ToString();
+            string zipCode = MainPage.ListRestaurantZipCode[0].ToString();
+            string city = MainPage.ListRestaurantCity[0].ToString();
 
             string[] listAddress = address.Split(' ');
 

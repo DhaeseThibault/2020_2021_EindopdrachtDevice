@@ -23,7 +23,7 @@
                     Image="ic_arrow_drop_down"
                     Title="Takeaway or delivery?" TextColor="White" TitleColor="White"
                     Margin="32,0,32,0"
-                    x:Name="pckTakeaway" SelectedIndexChanged="pckChoosen_Takeaway">
+                    x:Name="pckTakeaway" SelectedIndexChanged="PckChoosen_Takeaway">
             <controls:CustomPicker.Items>
                 <x:String>Delivery</x:String>
                 <x:String>Takeaway</x:String>
@@ -38,7 +38,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Text="Restaurants:" FontSize="20" FontAttributes="Bold" TextColor="Black" Margin="0,0,0,8"/>
-                <ListView Grid.Row="1" x:Name="lvwRestaurants" SeparatorColor="Black" RowHeight="70" ItemSelected="lvwRestaurant_ItemSelected">
+                <ListView Grid.Row="1" x:Name="lvwRestaurants" SeparatorColor="Black" RowHeight="70" ItemSelected="LvwRestaurant_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

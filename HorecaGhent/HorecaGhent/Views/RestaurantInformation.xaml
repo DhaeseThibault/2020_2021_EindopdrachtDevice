@@ -14,21 +14,21 @@
         <BoxView HeightRequest="2" Margin="0,-6,0,0" BackgroundColor="White"/>
 
         <!--Showing all the offers from the restaurant-->
-        <Label Text="Offer:" FontSize="25" FontAttributes="Bold" TextColor="White" Margin="32,16,0,0"/>
-        <Label x:Name="lblOffer" FontSize="20" TextColor="White" Margin="32,8,0,0" LineHeight="1.2">
+        <Label x:Name="lblOffer" Text="Offer:" FontSize="25" FontAttributes="Bold" TextColor="White" Margin="32,16,0,0"/>
+        <Label x:Name="lblOffers" FontSize="20" TextColor="White" Margin="32,8,0,0" LineHeight="1.2">
             <Label.Text >
             </Label.Text>
         </Label>
 
         <!--Showing all the kitchens from the restaurant-->
-        <Label Text="Kitchens:" FontSize="25" FontAttributes="Bold" TextColor="White" Margin="32,16,0,0"/>
-        <Label x:Name="lblKitchen" FontSize="20" TextColor="White" Margin="32,8,0,0" LineHeight="1.2">
+        <Label x:Name="lblKitchen"  Text="Kitchens:" FontSize="25" FontAttributes="Bold" TextColor="White" Margin="32,16,0,0"/>
+        <Label x:Name="lblKitchens" FontSize="20" TextColor="White" Margin="32,8,0,0" LineHeight="1.2">
             <Label.Text >
             </Label.Text>
         </Label>
         
         <!--Showing the address of the restaurant-->
-        <Label Text="Address:" FontSize="25" FontAttributes="Bold" TextColor="White" Margin="32,16,0,0"/>
+        <Label x:Name="lblAddressTitle" Text="Address:" FontSize="25" FontAttributes="Bold" TextColor="White" Margin="32,16,0,0"/>
 
         <!--This is for the alignment of the streetname and housenumber-->
         <Label Grid.Row="0" Grid.Column="0" x:Name="lblAddress" FontSize="20" TextColor="White" TextDecorations="Underline" Margin="32,8,32,0">

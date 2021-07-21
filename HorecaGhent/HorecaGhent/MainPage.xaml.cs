@@ -14,14 +14,14 @@ namespace HorecaGhent
 {
     public partial class MainPage : ContentPage
     {
-        public static List<string> listRestaurantName { get; set; } = new List<string>();
-        public static List<string> listRestaurantOffer { get; set; } = new List<string>();
-        public static List<string> listRestaurantKitchen { get; set; } = new List<string>();
-        public static List<string> listRestaurantAddress { get; set; } = new List<string>();
-        public static List<int> listRestaurantZipCode { get; set; } = new List<int>();
-        public static List<string> listRestaurantCity { get; set; } = new List<string>();
-        public static List<string> listRestaurantPhoneNumber { get; set; } = new List<string>();
-        public static List<string> listRestaurantSiteUrl { get; set; } = new List<string>();
+        public static List<string> ListRestaurantName { get; set; } = new List<string>();
+        public static List<string> ListRestaurantOffer { get; set; } = new List<string>();
+        public static List<string> ListRestaurantKitchen { get; set; } = new List<string>();
+        public static List<string> ListRestaurantAddress { get; set; } = new List<string>();
+        public static List<string> ListRestaurantZipCode { get; set; } = new List<string>();
+        public static List<string> ListRestaurantCity { get; set; } = new List<string>();
+        public static List<string> ListRestaurantPhoneNumber { get; set; } = new List<string>();
+        public static List<string> ListRestaurantSiteUrl { get; set; } = new List<string>();
 
         public MainPage()
         {
@@ -34,14 +34,14 @@ namespace HorecaGhent
             List<Horeca> listHorecaNames = await HorecaRepository.GetHorecas();
             lvwRestaurants.ItemsSource = listHorecaNames;
 
-            listRestaurantName.Clear();
-            listRestaurantOffer.Clear();
-            listRestaurantKitchen.Clear();
-            listRestaurantAddress.Clear();
-            listRestaurantZipCode.Clear();
-            listRestaurantCity.Clear();
-            listRestaurantPhoneNumber.Clear();
-            listRestaurantSiteUrl.Clear();
+            ListRestaurantName.Clear();
+            ListRestaurantOffer.Clear();
+            ListRestaurantKitchen.Clear();
+            ListRestaurantAddress.Clear();
+            ListRestaurantZipCode.Clear();
+            ListRestaurantCity.Clear();
+            ListRestaurantPhoneNumber.Clear();
+            ListRestaurantSiteUrl.Clear();
             
         }
 
@@ -50,7 +50,7 @@ namespace HorecaGhent
             TestHorecaRepository();
         }
 
-        private void pckChoosen_Takeaway(object sender, EventArgs e)
+        private void PckChoosen_Takeaway(object sender, EventArgs e)
         {
             if (pckTakeaway.SelectedIndex == 0)
             {
@@ -62,52 +62,81 @@ namespace HorecaGhent
             }
         }
 
-        private void lvwRestaurant_ItemSelected(object sender, SelectedItemChangedEventArgs e)        {
+        private void LvwRestaurant_ItemSelected(object sender, SelectedItemChangedEventArgs e)        {
             var selectedRestaurant = (Horeca)lvwRestaurants.SelectedItem;
             var NameSelectedRestaurant = selectedRestaurant.Name;
-            listRestaurantName.Add(NameSelectedRestaurant.ToString());
+            ListRestaurantName.Add(NameSelectedRestaurant.ToString());
 
 
             var OfferSelectedRestaurant = selectedRestaurant.Offer;
-            if (OfferSelectedRestaurant != "")
+            if (OfferSelectedRestaurant != null)
             {
-                listRestaurantOffer.Add(OfferSelectedRestaurant.ToString());
+                ListRestaurantOffer.Add(OfferSelectedRestaurant.ToString());
+            }
+            else
+            {
+                ListRestaurantOffer.Add("");
             }
 
             var KitchenSelectedRestaurant = selectedRestaurant.Kitchen;
-            if (KitchenSelectedRestaurant != "")
+            if (KitchenSelectedRestaurant != null)
             {
-                listRestaurantKitchen.Add(KitchenSelectedRestaurant.ToString());
+                ListRestaurantKitchen.Add(KitchenSelectedRestaurant.ToString());
+            }
+            else
+            {
+                ListRestaurantKitchen.Add("");
             }
 
             var AddressSelectedRestaurant = selectedRestaurant.Address;
-            if (AddressSelectedRestaurant != "")
+            if (AddressSelectedRestaurant != null)
             {
-                listRestaurantAddress.Add(AddressSelectedRestaurant.ToString());
+                ListRestaurantAddress.Add(AddressSelectedRestaurant.ToString());
+            }
+            else
+            {
+                ListRestaurantAddress.Add("");
             }
 
             var ZipCodeSelectedRestaurant = selectedRestaurant.ZipCode;
-            if (ZipCodeSelectedRestaurant.ToString() != "")
+            if (ZipCodeSelectedRestaurant.ToString() != null)
             {
-                listRestaurantZipCode.Add(ZipCodeSelectedRestaurant);
+                ListRestaurantZipCode.Add(ZipCodeSelectedRestaurant.ToString());
+            }
+            else
+            {
+                ListRestaurantZipCode.Add("");
             }
 
             var CitySelectedRestaurant = selectedRestaurant.City;
-            if (CitySelectedRestaurant != "")
+            if (CitySelectedRestaurant != null)
             {
-                listRestaurantCity.Add(CitySelectedRestaurant.ToString());
+                ListRestaurantCity.Add(CitySelectedRestaurant.ToString());
+            }
+            else
+            {
+                ListRestaurantCity.Add("");
             }
 
             var PhoneNumberSelectedRestaurant = selectedRestaurant.PhoneNumber;
-            if (PhoneNumberSelectedRestaurant != "")
+            if (PhoneNumberSelectedRestaurant != null)
             {
-                listRestaurantPhoneNumber.Add(PhoneNumberSelectedRestaurant.ToString());
+                ListRestaurantPhoneNumber.Add(PhoneNumberSelectedRestaurant.ToString());
+            }
+            else
+            {
+                ListRestaurantPhoneNumber.Add("");
             }
 
+
             var SiteUrlRestaurant = selectedRestaurant.SiteURL;
-            if (SiteUrlRestaurant != "")
+            if (SiteUrlRestaurant != null)
             {
-                listRestaurantSiteUrl.Add(SiteUrlRestaurant.ToString());
+                ListRestaurantSiteUrl.Add(SiteUrlRestaurant.ToString());
+            }
+            else
+            {
+                ListRestaurantSiteUrl.Add("");
             }
 
             Navigation.PushAsync(new RestaurantInformation());
