@@ -17,7 +17,6 @@ namespace HorecaGhent.Models
         public string City { get; set; }
         public string PhoneNumber { get; set; }
         public string SiteURL { get; set; }
-        public string ImageURL { get; set; }
 
 
         [JsonExtensionData]
@@ -35,7 +34,6 @@ namespace HorecaGhent.Models
             City = (string)fieldData.SelectToken("gemeente");
             PhoneNumber = (string)fieldData.SelectToken("telefoonnummer");
             SiteURL = (string)fieldData.SelectToken("link");
-            ImageURL = (string)fieldData.SelectToken("image_path");
         }
     }
 }

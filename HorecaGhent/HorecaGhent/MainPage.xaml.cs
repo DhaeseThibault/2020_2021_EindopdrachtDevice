@@ -19,7 +19,7 @@ namespace HorecaGhent
         public static List<string> listRestaurantKitchen { get; set; } = new List<string>();
         public static List<string> listRestaurantAddress { get; set; } = new List<string>();
         public static List<int> listRestaurantZipCode { get; set; } = new List<int>();
-        public static List<String> listRestaurantCity { get; set; } = new List<String>();
+        public static List<string> listRestaurantCity { get; set; } = new List<string>();
         public static List<string> listRestaurantPhoneNumber { get; set; } = new List<string>();
         public static List<string> listRestaurantSiteUrl { get; set; } = new List<string>();
 
@@ -36,6 +36,12 @@ namespace HorecaGhent
 
             listRestaurantName.Clear();
             listRestaurantOffer.Clear();
+            listRestaurantKitchen.Clear();
+            listRestaurantAddress.Clear();
+            listRestaurantZipCode.Clear();
+            listRestaurantCity.Clear();
+            listRestaurantPhoneNumber.Clear();
+            listRestaurantSiteUrl.Clear();
             
         }
 

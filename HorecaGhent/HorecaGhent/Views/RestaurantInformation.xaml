@@ -19,5 +19,38 @@
             </Label.Text>
         </Label>
 
+        <!--Showing all the kitchens from the restaurant-->
+        <Label Text="Kitchens:" FontSize="25" FontAttributes="Bold" TextColor="White" Margin="32,16,0,0"/>
+        <Label x:Name="lblKitchen" FontSize="20" TextColor="White" Margin="32,8,0,0" LineHeight="1.2">
+            <Label.Text >
+            </Label.Text>
+        </Label>
+        
+        <!--Showing the address of the restaurant-->
+        <Label x:Name="lblAddress" FontSize="20" TextColor="White" Margin="32,8,0,0"/>
+        <Label x:Name="lblZipCode" FontSize="20" TextColor="White" Margin="32,8,0,0"/>
+        <Label x:Name="lblCity"    FontSize="20" TextColor="White" Margin="32,8,0,0"/>
+        
+        <!--Showing the phonenumber of the restaurant-->
+        <Label x:Name="lblPhoneNumber" FontSize="20" TextColor="White" Margin="32,8,0,0"/>
+        
+        <!--Showing the url of the site from the restaurant-->
+        <!--<Label x:Name="lblSiteUrl" FontSize="20" TextColor="White" Margin="32,8,0,0"/>-->
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span x:Name="lblSiteUrl" 
+                          Text="Click Me"
+                          TextColor="DarkOrange"
+                          TextDecorations="Underline">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding TapCommand}"
+                                                  CommandParameter="{Binding SiteURL}"/>
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
     </StackLayout>
 </ContentPage>
