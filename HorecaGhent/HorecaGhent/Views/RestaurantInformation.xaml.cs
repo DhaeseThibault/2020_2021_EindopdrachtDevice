@@ -7,7 +7,7 @@ using System.Windows.Input;
 using HorecaGhent.Models;
 using HorecaGhent.Repositories;
 using HorecaGhent.Views;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -28,6 +28,9 @@ namespace HorecaGhent.Views
 
         private async void TestHorecaRepository()
         {
+            lblOffer.Text = "";
+            lblKitchen.Text = "";
+
             // Showing the restaurant name in the topbar
             lblRestaurantName.Text = MainPage.listRestaurantName[0].ToString();
 
@@ -55,9 +58,9 @@ namespace HorecaGhent.Views
             string zipCode = MainPage.listRestaurantZipCode[0].ToString();
             string city = MainPage.listRestaurantCity[0].ToString();
 
-            lblAddress.Text = address;
-            lblZipCode.Text = zipCode;
-            lblCity.Text = city;
+            lblAddress.Text = address + ", " + zipCode + " " + city;
+            //lblZipCode.Text += zipCode + " " + city;
+            //lblCity.Text = city;
 
 
             // Showing the PhoneNumber of the restaurant
@@ -68,12 +71,36 @@ namespace HorecaGhent.Views
             //Showing the URL of the restaurants site
             string siteUrl = MainPage.listRestaurantSiteUrl[0].ToString();
             lblSiteUrl.Text = siteUrl;
+
+            //https://www.google.be/maps/dir//Binnenweg+26,+9050+Gent/@50.9699123,3.5180066,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x47c374002c8b2249:0x86cf1a56b6a9fd7d!2m2!1d3.7398261!2d51.0358584!3e0
+
+
         }
 
-        public ICommand TapCommand => new Command<string>((url) =>
+        private void PhoneNumberTapped(object sender, EventArgs e)
         {
-            Device.OpenUri(new System.Uri(url));
-        });
+            string phoneNumber = MainPage.listRestaurantPhoneNumber[0].ToString();
+            PhoneDialer.Open(phoneNumber);
+        }
 
+        private void SiteUrlTapped(object sender, EventArgs e)
+        {
+            string siteUrl = MainPage.listRestaurantSiteUrl[0].ToString();
+            Device.OpenUri(new Uri(siteUrl));
+        }
+
+        private void AddressTapped(object sender, EventArgs e)
+        {
+            string address = MainPage.listRestaurantAddress[0].ToString();
+            string zipCode = MainPage.listRestaurantZipCode[0].ToString();
+            string city = MainPage.listRestaurantCity[0].ToString();
+
+            string[] listAddress = address.Split(' ');
+
+
+            //string url = "https://www.google.be/maps/dir//Binnenweg+26,+9050+Gent/@50.9699123,3.5180066,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x47c374002c8b2249:0x86cf1a56b6a9fd7d!2m2!1d3.7398261!2d51.0358584!3e0";
+            string url = "https://www.google.be/maps/dir//" + listAddress[0] + "+" + listAddress[1] + ",+" + zipCode + "+" + city + "/@50.9699123,3.5180066,17z / data = !4m9!4m8!1m0!1m5!1m1!1s0x47c374002c8b2249: 0x86cf1a56b6a9fd7d!2m2!1d3.7398261!2d51.0358584!3e0";
+            Device.OpenUri(new Uri(url));
+        }
     }
 }

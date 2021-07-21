@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
              x:Class="HorecaGhent.Views.RestaurantInformation"
              NavigationPage.HasNavigationBar="False">
 
@@ -27,30 +28,47 @@
         </Label>
         
         <!--Showing the address of the restaurant-->
-        <Label x:Name="lblAddress" FontSize="20" TextColor="White" Margin="32,8,0,0"/>
-        <Label x:Name="lblZipCode" FontSize="20" TextColor="White" Margin="32,8,0,0"/>
-        <Label x:Name="lblCity"    FontSize="20" TextColor="White" Margin="32,8,0,0"/>
+        <Label Text="Address:" FontSize="25" FontAttributes="Bold" TextColor="White" Margin="32,16,0,0"/>
+
+         <!--This is for the alignment of the streetname and housenumber-->
+        <Grid Margin="32,8,0,0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="AddressTapped"/>
+            </Grid.GestureRecognizers>
+
+            <Label Grid.Row="0" Grid.Column="0" x:Name="lblAddress" FontSize="20" TextColor="White" TextDecorations="Underline"/>
+
+            
+        </Grid>
+
+        
         
         <!--Showing the phonenumber of the restaurant-->
-        <Label x:Name="lblPhoneNumber" FontSize="20" TextColor="White" Margin="32,8,0,0"/>
-        
+        <Label x:Name="lblPhoneNumber" FontSize="20" TextColor="White" Margin="32,8,0,0" TextDecorations="Underline">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="PhoneNumberTapped"/>
+            </Label.GestureRecognizers>
+        </Label>
+
         <!--Showing the url of the site from the restaurant-->
         <!--<Label x:Name="lblSiteUrl" FontSize="20" TextColor="White" Margin="32,8,0,0"/>-->
-        <Label>
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span x:Name="lblSiteUrl" 
-                          Text="Click Me"
-                          TextColor="DarkOrange"
-                          TextDecorations="Underline">
-                        <Span.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding TapCommand}"
-                                                  CommandParameter="{Binding SiteURL}"/>
-                        </Span.GestureRecognizers>
-                    </Span>
-                </FormattedString>
-            </Label.FormattedText>
+        <Label x:Name="lblSiteUrl" FontSize="20" TextColor="White" Margin="32,8,0,0" TextDecorations="Underline">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="SiteUrlTapped"/>
+            </Label.GestureRecognizers>
         </Label>
+
+        <Button Text="Add to favorites" FontAttributes="Bold" FontSize="20" TextColor="White" BackgroundColor="DarkOrange" CornerRadius="10" Margin="32,0,32,32" Padding="0,8,0,8" VerticalOptions="EndAndExpand" />
 
     </StackLayout>
 </ContentPage>
