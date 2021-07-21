@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local1="clr-namespace:HorecaGhent.Models"
              x:Class="HorecaGhent.Views.RestaurantInformation"
              NavigationPage.HasNavigationBar="False">
 
     <StackLayout BackgroundColor="#171721">
+        
         <!--Topbar-->        
         <Grid>
             <BoxView BackgroundColor="DarkOrange" HeightRequest="50"/>
@@ -30,39 +30,35 @@
         <!--Showing the address of the restaurant-->
         <Label Text="Address:" FontSize="25" FontAttributes="Bold" TextColor="White" Margin="32,16,0,0"/>
 
-         <!--This is for the alignment of the streetname and housenumber-->
-        <Grid Margin="32,8,0,0" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.GestureRecognizers>
+        <!--This is for the alignment of the streetname and housenumber-->
+        <Label Grid.Row="0" Grid.Column="0" x:Name="lblAddress" FontSize="20" TextColor="White" TextDecorations="Underline" Margin="32,8,32,0">
+            <Label.GestureRecognizers>
                 <TapGestureRecognizer Tapped="AddressTapped"/>
-            </Grid.GestureRecognizers>
-
-            <Label Grid.Row="0" Grid.Column="0" x:Name="lblAddress" FontSize="20" TextColor="White" TextDecorations="Underline"/>
-
+            </Label.GestureRecognizers>
+        </Label>
             
-        </Grid>
 
         
         
         <!--Showing the phonenumber of the restaurant-->
-        <Label x:Name="lblPhoneNumber" FontSize="20" TextColor="White" Margin="32,8,0,0" TextDecorations="Underline">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="PhoneNumberTapped"/>
-            </Label.GestureRecognizers>
-        </Label>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" HorizontalOptions="Start" Source="{local1:ImageResourceExtensions HorecaGhent.Images.Phone.png}" WidthRequest="50" HeightRequest="50"/>
+
+
+            <Label Grid.Column="1" x:Name="lblPhoneNumber" FontSize="20" TextColor="White" Margin="32,8,0,0" TextDecorations="Underline">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="PhoneNumberTapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+        
 
         <!--Showing the url of the site from the restaurant-->
-        <!--<Label x:Name="lblSiteUrl" FontSize="20" TextColor="White" Margin="32,8,0,0"/>-->
-        <Label x:Name="lblSiteUrl" FontSize="20" TextColor="White" Margin="32,8,0,0" TextDecorations="Underline">
+        <Label x:Name="lblSiteUrl" FontSize="20" TextColor="White" Margin="32,8,32,0" TextDecorations="Underline">
             <Label.GestureRecognizers>
                 <TapGestureRecognizer Tapped="SiteUrlTapped"/>
             </Label.GestureRecognizers>
