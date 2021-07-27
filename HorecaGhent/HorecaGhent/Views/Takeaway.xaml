@@ -6,13 +6,49 @@
     <StackLayout>
         <!--Topbar-->
         <Grid>
-            <BoxView BackgroundColor="DarkOrange" HeightRequest="50"/>
+            <BoxView BackgroundColor="DarkOrange" HeightRequest="100"/>
             <Label x:Name="lblTakeAway" Text="......" FontSize="40" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
         </Grid>
 
         <Grid HeightRequest="2" Margin="0,-6,0,0">
             <BoxView BackgroundColor="White"/>
         </Grid>
+
+        
+        <!--Restaurants based on the filter-->
+        <Label x:Name="lblFilter" FontSize="20" TextColor="White" FontAttributes="Bold" Margin="32,32,0,0"/>
+        <Frame Margin="32,8,32,32" BackgroundColor="Silver" CornerRadius="20" HasShadow="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Text="Restaurants:" FontSize="20" FontAttributes="Bold" TextColor="Black" Margin="0,0,0,8"/>
+                <ListView Grid.Row="1" x:Name="lvwRestaurantsOnFilter" SeparatorColor="Black" RowHeight="70">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid VerticalOptions="Center">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="25"/>
+                                        <RowDefinition Height="25"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Row="0" Grid.ColumnSpan="4" Text="{Binding Name}"  FontSize="20" TextColor="Black" Margin="0,0,0,-8"/>
+
+                                    <Label Grid.Row="1" Grid.Column="0" Text="Kitchen type:" FontSize="15" TextColor="#2D2D2D"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding Kitchen}" FontSize="15" TextColor="#2D2D2D"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Frame>
 
     </StackLayout>
 </ContentPage>

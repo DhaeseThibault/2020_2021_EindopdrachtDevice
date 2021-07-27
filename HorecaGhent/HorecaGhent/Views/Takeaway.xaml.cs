@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HorecaGhent.Models;
+using HorecaGhent.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,8 +26,22 @@ namespace HorecaGhent.Views
 
         private async void TestHorecaRepository()
         {
-            lblTakeAway.Text = MainPage.ListTakeAway[0].ToString();
+            string takeawayOrDelivery = MainPage.ListTakeAway[0].ToString();
+            
+            lblTakeAway.Text = takeawayOrDelivery;
+            lblFilter.Text = takeawayOrDelivery + " restaurants:";
 
+            List<Horeca> listTakeawayFilters = await HorecaRepository.GetTakeawayFilter();
+            List<Horeca> listDeliveryFilters = await HorecaRepository.GetDeliveryFilter();
+
+            if (takeawayOrDelivery == "Delivery")
+            {
+                lvwRestaurantsOnFilter.ItemsSource = listDeliveryFilters;
+            }
+            else
+            {
+                lvwRestaurantsOnFilter.ItemsSource = listTakeawayFilters;
+            }
         }
     }
 }
