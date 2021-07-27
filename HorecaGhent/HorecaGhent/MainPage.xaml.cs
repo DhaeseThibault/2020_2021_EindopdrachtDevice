@@ -68,82 +68,9 @@ namespace HorecaGhent
 
         private void LvwRestaurant_ItemSelected(object sender, SelectedItemChangedEventArgs e)        {
             var selectedRestaurant = (Horeca)lvwRestaurants.SelectedItem;
-            var NameSelectedRestaurant = selectedRestaurant.Name;
-            ListRestaurantName.Add(NameSelectedRestaurant.ToString());
+            
 
-
-            var OfferSelectedRestaurant = selectedRestaurant.Offer;
-            if (OfferSelectedRestaurant != null)
-            {
-                ListRestaurantOffer.Add(OfferSelectedRestaurant.ToString());
-            }
-            else
-            {
-                ListRestaurantOffer.Add("");
-            }
-
-            var KitchenSelectedRestaurant = selectedRestaurant.Kitchen;
-            if (KitchenSelectedRestaurant != null)
-            {
-                ListRestaurantKitchen.Add(KitchenSelectedRestaurant.ToString());
-            }
-            else
-            {
-                ListRestaurantKitchen.Add("");
-            }
-
-            var AddressSelectedRestaurant = selectedRestaurant.Address;
-            if (AddressSelectedRestaurant != null)
-            {
-                ListRestaurantAddress.Add(AddressSelectedRestaurant.ToString());
-            }
-            else
-            {
-                ListRestaurantAddress.Add("");
-            }
-
-            var ZipCodeSelectedRestaurant = selectedRestaurant.ZipCode;
-            if (ZipCodeSelectedRestaurant.ToString() != null)
-            {
-                ListRestaurantZipCode.Add(ZipCodeSelectedRestaurant.ToString());
-            }
-            else
-            {
-                ListRestaurantZipCode.Add("");
-            }
-
-            var CitySelectedRestaurant = selectedRestaurant.City;
-            if (CitySelectedRestaurant != null)
-            {
-                ListRestaurantCity.Add(CitySelectedRestaurant.ToString());
-            }
-            else
-            {
-                ListRestaurantCity.Add("");
-            }
-
-            var PhoneNumberSelectedRestaurant = selectedRestaurant.PhoneNumber;
-            if (PhoneNumberSelectedRestaurant != null)
-            {
-                ListRestaurantPhoneNumber.Add(PhoneNumberSelectedRestaurant.ToString());
-            }
-            else
-            {
-                ListRestaurantPhoneNumber.Add("");
-            }
-
-
-            var SiteUrlRestaurant = selectedRestaurant.SiteURL;
-            if (SiteUrlRestaurant != null)
-            {
-                ListRestaurantSiteUrl.Add(SiteUrlRestaurant.ToString());
-            }
-            else
-            {
-                ListRestaurantSiteUrl.Add("");
-            }
-
-            Navigation.PushAsync(new RestaurantInformation());
+            Navigation.PushAsync(new RestaurantInformation(selectedRestaurant));
         }
     }
 }

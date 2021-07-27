@@ -14,6 +14,16 @@ namespace HorecaGhent.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Takeaway : ContentPage
     {
+        public static List<string> ListRestaurantName { get; set; } = new List<string>();
+        public static List<string> ListRestaurantOffer { get; set; } = new List<string>();
+        public static List<string> ListRestaurantKitchen { get; set; } = new List<string>();
+        public static List<string> ListRestaurantAddress { get; set; } = new List<string>();
+        public static List<string> ListRestaurantZipCode { get; set; } = new List<string>();
+        public static List<string> ListRestaurantCity { get; set; } = new List<string>();
+        public static List<string> ListRestaurantPhoneNumber { get; set; } = new List<string>();
+        public static List<string> ListRestaurantSiteUrl { get; set; } = new List<string>();
+        public static List<string> ListTakeAway { get; set; } = new List<string>();
+
         public Takeaway()
         {
             InitializeComponent();
@@ -42,6 +52,13 @@ namespace HorecaGhent.Views
             {
                 lvwRestaurantsOnFilter.ItemsSource = listTakeawayFilters;
             }
+        }
+
+        private void lvwRestaurantsOnFilter_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var selectedRestaurant = (Horeca)lvwRestaurantsOnFilter.SelectedItem;
+
+            Navigation.PushAsync(new RestaurantInformation(selectedRestaurant));
         }
     }
 }

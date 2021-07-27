@@ -21,6 +21,13 @@ namespace HorecaGhent.Views
             InitializeComponent();
         }
 
+        private Horeca horeca1;
+        public RestaurantInformation(Horeca horeca)
+        {
+            InitializeComponent();
+            horeca1 = horeca;
+        }
+
         protected override void OnAppearing()
         {
             TestHorecaRepository();
@@ -28,109 +35,51 @@ namespace HorecaGhent.Views
 
         private async void TestHorecaRepository()
         {
-            lblOffers.Text = "";
-            lblKitchens.Text = "";
-
             // Showing the restaurant name in the topbar
-            lblRestaurantName.Text = MainPage.ListRestaurantName[0].ToString();
+            lblRestaurantName.Text = horeca1.Name;
 
 
             // Showing all the offers in the body
-            string offer = MainPage.ListRestaurantOffer[0].ToString();
-            if (offer != "")
-            {
-                string[] listOffers = offer.Split(';');
-                for (int i = 0; i < listOffers.Length; i++)
-                {
-                    lblOffers.Text += "-  " + listOffers[i] + "\n";
-                }
-            }
-            else
-            {
-                lblOffer.IsVisible = false;
-                lblOffers.IsVisible = false;
-            }
-            
-            
+            lblOffer.Text = horeca1.Offer;
 
 
             // Showing all the kitchen types in the body
-            string kitchen = MainPage.ListRestaurantKitchen[0].ToString();
-            if (kitchen != "")
+            string kitchensString = horeca1.Kitchen.ToString();
+            string[] kitchens = kitchensString.Split(';');
+
+            for (int i = 0; i < kitchens.Length; i++)
             {
-                string[] listKitchen = kitchen.Split(';');
-                for (int i = 0; i < listKitchen.Length; i++)
-                {
-                    lblKitchens.Text += "-  " + listKitchen[i] + "\n";
-                }
+                lblKitchen.Text += "\n - " + kitchens[i];
             }
-            else
-            {
-                lblKitchen.IsVisible = false;
-                lblKitchens.IsVisible = false;
-            }
-            
 
 
             // Showing the restaurant addresss
-            string address = MainPage.ListRestaurantAddress[0].ToString();
-            string zipCode = MainPage.ListRestaurantZipCode[0].ToString();
-            string city = MainPage.ListRestaurantCity[0].ToString();
-
-            if (address != "" || zipCode != "" || city != "")
-            {
-                lblAddress.Text = address + ", " + zipCode + " " + city;
-            }
-            else
-            {
-                lblAddressTitle.IsVisible = false;
-                lblAddress.IsVisible = false;
-            }
-
-
-
+            lblAddress.Text = horeca1.Address + ", " + horeca1.ZipCode + " " + horeca1.City;
 
             // Showing the PhoneNumber of the restaurant
-            string phoneNumber = MainPage.ListRestaurantPhoneNumber[0].ToString();
-            if (phoneNumber != "")
-            {
-                lblPhoneNumber.Text = phoneNumber;
-            }
-            else
-            {
-                lblPhoneNumber.IsVisible = false;
-            }
-
+            lblPhoneNumber.Text = horeca1.PhoneNumber;
 
             //Showing the URL of the restaurants site
-            string siteUrl = MainPage.ListRestaurantSiteUrl[0].ToString();
-            if (siteUrl != "")
-            {
-                lblSiteUrl.Text = siteUrl;
-            }
-            else
-            {
-                lblSiteUrl.IsVisible = false;
-            }
+            lblSiteUrl.Text = horeca1.SiteURL;
         }
 
         private void PhoneNumberTapped(object sender, EventArgs e)
         {
-            string phoneNumber = MainPage.ListRestaurantPhoneNumber[0].ToString();
+            string phoneNumber = horeca1.PhoneNumber;
             PhoneDialer.Open(phoneNumber);
         }
 
         private void SiteUrlTapped(object sender, EventArgs e)
         {
-            string siteUrl = MainPage.ListRestaurantSiteUrl[0].ToString();
+            string siteUrl = horeca1.SiteURL;
             Device.OpenUri(new Uri(siteUrl));
         }
 
         private void AddressTapped(object sender, EventArgs e)
         {
-            string address = MainPage.ListRestaurantAddress[0].ToString();
-            string zipCode = MainPage.ListRestaurantZipCode[0].ToString();
-            string city = MainPage.ListRestaurantCity[0].ToString();
+            string address = horeca1.Address;
+            string zipCode = horeca1.ZipCode.ToString();
+            string city = horeca1.City;
 
             string[] listAddress = address.Split(' ');
 

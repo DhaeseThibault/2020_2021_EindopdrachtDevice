@@ -15,8 +15,6 @@ namespace HorecaGhent.Repositories
     public class HorecaRepository
     {
         private const string _BASEAPI = "https://data.stad.gent/api/records/1.0/search/?dataset=koop-lokaal-horeca&q=&rows=215";
-        //private const string _BASEAPI = "https://data.stad.gent/api/records/1.0/search/?dataset=koop-lokaal-horeca&q=&215&q=Belgisch";
-        //private const string _BASEAPI = "https://data.stad.gent/api/records/1.0/search/?dataset=koop-lokaal-horeca&q=afhalen&rows=500";
 
         private static HttpClient GetHttpClient()
         {

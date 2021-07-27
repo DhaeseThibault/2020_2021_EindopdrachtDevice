@@ -24,7 +24,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Text="Restaurants:" FontSize="20" FontAttributes="Bold" TextColor="Black" Margin="0,0,0,8"/>
-                <ListView Grid.Row="1" x:Name="lvwRestaurantsOnFilter" SeparatorColor="Black" RowHeight="70">
+                <ListView Grid.Row="1" x:Name="lvwRestaurantsOnFilter" SeparatorColor="Black" RowHeight="70" ItemSelected="lvwRestaurantsOnFilter_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
