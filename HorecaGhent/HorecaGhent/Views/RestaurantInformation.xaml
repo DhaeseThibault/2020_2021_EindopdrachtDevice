@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local1="clr-namespace:HorecaGhent.Models"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:HorecaGhent.Models"
              x:Class="HorecaGhent.Views.RestaurantInformation"
              NavigationPage.HasNavigationBar="False">
 
@@ -46,7 +46,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Image Grid.Column="0" HorizontalOptions="Start" Source="{local1:ImageResourceExtensions HorecaGhent.Images.Phone.png}" WidthRequest="50" HeightRequest="50"/>
+            <Image Grid.Column="0" HorizontalOptions="Start" Source="{local:ImageResourceExtensions HorecaGhent.Images.Phone.png}" WidthRequest="50" HeightRequest="50"/>
 
 
             <Label Grid.Column="1" x:Name="lblPhoneNumber" FontSize="20" TextColor="White" Margin="32,8,0,0" TextDecorations="Underline">

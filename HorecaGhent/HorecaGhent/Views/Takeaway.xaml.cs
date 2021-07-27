@@ -16,5 +16,16 @@ namespace HorecaGhent.Views
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            TestHorecaRepository();
+        }
+
+        private async void TestHorecaRepository()
+        {
+            lblTakeAway.Text = MainPage.ListTakeAway[0].ToString();
+
+        }
     }
 }

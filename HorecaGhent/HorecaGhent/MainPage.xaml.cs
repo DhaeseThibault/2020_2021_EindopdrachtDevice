@@ -22,6 +22,7 @@ namespace HorecaGhent
         public static List<string> ListRestaurantCity { get; set; } = new List<string>();
         public static List<string> ListRestaurantPhoneNumber { get; set; } = new List<string>();
         public static List<string> ListRestaurantSiteUrl { get; set; } = new List<string>();
+        public static List<string> ListTakeAway { get; set; } = new List<string>();
 
         public MainPage()
         {
@@ -42,6 +43,7 @@ namespace HorecaGhent
             ListRestaurantCity.Clear();
             ListRestaurantPhoneNumber.Clear();
             ListRestaurantSiteUrl.Clear();
+            ListTakeAway.Clear();
             
         }
 
@@ -54,11 +56,13 @@ namespace HorecaGhent
         {
             if (pckTakeaway.SelectedIndex == 0)
             {
+                ListTakeAway.Add("Delivery");
                 Navigation.PushAsync(new Takeaway());
             }
             else if (pckTakeaway.SelectedIndex == 1)
             {
-
+                ListTakeAway.Add("Take Away");
+                Navigation.PushAsync(new Takeaway());
             }
         }
 
