@@ -9,6 +9,7 @@ namespace HorecaGhent.Models
 {
     public class Horeca
     {
+        public string recordid { get; set; }
         public string Name { get; set; }
         public string Offer { get; set; }
         public string Kitchen { get; set; }
@@ -26,6 +27,8 @@ namespace HorecaGhent.Models
         private void ProcessExtraJsonData(StreamingContext context)
         {
             JToken fieldData = (JToken)_fieldData["fields"];
+            //JToken RestaurantId = (JToken)_fieldData["recordid"];
+            //RestaurantId = ;
             Name = (string)fieldData.SelectToken("naam");
             Offer = (string)fieldData.SelectToken("aanbod");
             Kitchen = (string)fieldData.SelectToken("keuken");

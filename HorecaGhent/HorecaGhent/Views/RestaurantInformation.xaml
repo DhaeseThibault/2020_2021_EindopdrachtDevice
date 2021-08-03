@@ -9,20 +9,20 @@
         <!--Topbar-->        
         <Grid>
             <BoxView BackgroundColor="DarkOrange" HeightRequest="50"/>
-            <Label x:Name="lblRestaurantName" Text="" FontSize="30" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label x:Name="lblRestaurantName" FontSize="30" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
         </Grid>
         <BoxView HeightRequest="2" Margin="0,-6,0,0" BackgroundColor="White"/>
 
         <!--Showing all the offers from the restaurant-->
         <Label Text="Offer:" FontSize="25" FontAttributes="Bold" TextColor="White" Margin="32,16,0,0"/>
-        <Label x:Name="lblOffer" FontSize="20" TextColor="White" Margin="32,8,0,0" LineHeight="1.2">
+        <Label x:Name="lblOffer" FontSize="20" TextColor="White" Margin="64,0,0,0" LineHeight="1.2">
             <Label.Text >
             </Label.Text>
         </Label>
 
         <!--Showing all the kitchens from the restaurant-->
         <Label Text="Kitchens:" FontSize="25" FontAttributes="Bold" TextColor="White" Margin="32,32,0,0"/>
-        <Label x:Name="lblKitchen" FontSize="20" TextColor="White" Margin="32,-30,0,0" LineHeight="1.2">
+        <Label x:Name="lblKitchen" FontSize="20" TextColor="White" Margin="64,0,0,0" LineHeight="1.2">
             <Label.Text >
             </Label.Text>
         </Label>
@@ -62,7 +62,12 @@
             </Label.GestureRecognizers>
         </Label>
 
-        <Button Text="Add to favorites" FontAttributes="Bold" FontSize="20" TextColor="White" BackgroundColor="DarkOrange" CornerRadius="10" Margin="32,0,32,32" Padding="0,8,0,8" VerticalOptions="EndAndExpand" />
+        <Button Text="Add to favorites" FontAttributes="Bold" FontSize="20" TextColor="White" BackgroundColor="DarkOrange" CornerRadius="10" Margin="32,0,32,32" Padding="0,8,0,8" VerticalOptions="EndAndExpand" Pressed="Button_Pressed">
+            <Button.GestureRecognizers>
+                <TapGestureRecognizer Tapped="btnAddRestoToFavo_Tapped"/>
+            </Button.GestureRecognizers>
+        </Button>
+        
 
     </StackLayout>
 </ContentPage>
