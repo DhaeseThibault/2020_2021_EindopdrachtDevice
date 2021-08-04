@@ -16,3 +16,4 @@ C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\bin\
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\bin\Debug\netstandard2.0\Cosmos.CRTCompat.dll
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\Debug\netstandard2.0\HorecaGhent.csproj.CoreCompileInputs.cache
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent\obj\Debug\netstandard2.0\Views\FavoriteRestaurant.xaml.g.cs

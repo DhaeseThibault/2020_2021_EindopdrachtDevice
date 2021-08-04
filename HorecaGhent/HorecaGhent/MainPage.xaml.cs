@@ -14,14 +14,6 @@ namespace HorecaGhent
 {
     public partial class MainPage : ContentPage
     {
-        public static List<string> ListRestaurantName { get; set; } = new List<string>();
-        public static List<string> ListRestaurantOffer { get; set; } = new List<string>();
-        public static List<string> ListRestaurantKitchen { get; set; } = new List<string>();
-        public static List<string> ListRestaurantAddress { get; set; } = new List<string>();
-        public static List<string> ListRestaurantZipCode { get; set; } = new List<string>();
-        public static List<string> ListRestaurantCity { get; set; } = new List<string>();
-        public static List<string> ListRestaurantPhoneNumber { get; set; } = new List<string>();
-        public static List<string> ListRestaurantSiteUrl { get; set; } = new List<string>();
         public static List<string> ListTakeAway { get; set; } = new List<string>();
 
         public MainPage()
@@ -35,14 +27,6 @@ namespace HorecaGhent
             List<Horeca> listHorecaNames = await HorecaRepository.GetHorecas();
             lvwRestaurants.ItemsSource = listHorecaNames;
 
-            ListRestaurantName.Clear();
-            ListRestaurantOffer.Clear();
-            ListRestaurantKitchen.Clear();
-            ListRestaurantAddress.Clear();
-            ListRestaurantZipCode.Clear();
-            ListRestaurantCity.Clear();
-            ListRestaurantPhoneNumber.Clear();
-            ListRestaurantSiteUrl.Clear();
             ListTakeAway.Clear();
             
         }
@@ -71,6 +55,11 @@ namespace HorecaGhent
             
 
             Navigation.PushAsync(new RestaurantInformation(selectedRestaurant));
+        }
+
+        private void Button_Pressed(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new FavoriteRestaurant());
         }
     }
 }

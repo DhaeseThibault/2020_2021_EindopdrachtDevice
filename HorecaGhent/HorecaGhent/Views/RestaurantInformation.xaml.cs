@@ -113,7 +113,7 @@ namespace HorecaGhent.Views
             string RestaurantName = horeca1.Name;
             string RestaurantOffer = horeca1.Offer;
             string RestaurantKitchen = horeca1.Kitchen;
-            string RestaurantAddress = horeca1.Address + ", " + horeca1.ZipCode + horeca1.City;
+            string RestaurantAddress = horeca1.Address + ", " + horeca1.ZipCode + " " + horeca1.City;
             string RestaurantPhoneNumber = horeca1.PhoneNumber;
             string RestaurantSiteUrl = horeca1.SiteURL;
 

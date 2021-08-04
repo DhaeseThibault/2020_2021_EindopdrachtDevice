@@ -7,8 +7,7 @@
 
     <StackLayout BackgroundColor="#171721">
         <!--Topbar-->
-        <Grid>
-        <BoxView BackgroundColor="DarkOrange" HeightRequest="100"/>
+        <Grid BackgroundColor="DarkOrange" HeightRequest="100">
             <Label Text="Horeca Ghent" FontSize="40" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
         </Grid>
 
@@ -17,7 +16,7 @@
         </Grid>
 
         <!--Filter for type of kitchen-->
-        <Label Text="Type of takeaway" FontSize="20" TextColor="White" FontAttributes="Bold" Margin="32,8,0,0"/>
+        <Label Text="Type of takeaway:" FontSize="20" TextColor="White" FontAttributes="Bold" Margin="32,8,0,0"/>
         <controls:CustomPicker HorizontalOptions="Fill" VerticalOptions="Start"
                     HeightRequest="50" 
                     Image="ic_arrow_drop_down"
@@ -31,7 +30,7 @@
         </controls:CustomPicker>
             
         <!--Overview of every horeca in Ghent-->
-        <Frame Margin="32,8,32,32" BackgroundColor="Silver" CornerRadius="20" HasShadow="True">
+        <Frame Margin="32,16,32,32" BackgroundColor="Silver" CornerRadius="20" HasShadow="True">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
@@ -63,5 +62,8 @@
                 </ListView>
             </Grid>
         </Frame>
+        
+        <!--Button to go to favorite page-->
+        <Button Text="Favorite restaurants" FontAttributes="Bold" FontSize="20" TextColor="White" BackgroundColor="DarkOrange" CornerRadius="10" Margin="32,0,32,32" Padding="0,8,0,8" VerticalOptions="EndAndExpand" Pressed="Button_Pressed"/>
     </StackLayout>
 </ContentPage>
