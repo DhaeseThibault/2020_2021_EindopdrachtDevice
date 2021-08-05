@@ -190,26 +190,27 @@ namespace HorecaGhent.Repositories
             }
         }
 
-        //public static async Task<List<TrelloCard>> GetTrelloCardsAsync(string listId)
-        //{
+        public static async Task<List<TrelloCard>> GetTrelloCardsAsync(string listId)
+        {
 
-        //    string url = $"{_BASEURL}/list/{listId}/cards?key={_APIKEY}&token={_APITOKEN}";
-        //    using (HttpClient client = GetHttpClient())
-        //    {
-        //        try
-        //        {
+            string url = $"{_BASEURL}/list/{listId}/cards?key={_APIKEY}&token={_APITOKEN}";
+            using (HttpClient client = GetHttpClient())
+            {
+                try
+                {
 
-        //            string json = await client.GetStringAsync(url);
-        //            List<TrelloCard> list = JsonConvert.DeserializeObject<List<TrelloCard>>(json);
-        //            return list;
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            throw ex; // hier altijd een breakpoint zetten
-        //            // je applicatie gaat niet stoppen op je foutmelding in xamarin
-        //        }
-        //    }
-        //}
+                    string json = await client.GetStringAsync(url);
+                    List<TrelloCard> list = JsonConvert.DeserializeObject<List<TrelloCard>>(json);
+                    return list;
+                }
+                catch (Exception ex)
+                {
+                    throw ex; // hier altijd een breakpoint zetten
+                    // je applicatie gaat niet stoppen op je foutmelding in xamarin
+                }
+            }
+        }
+
 
 
         public static async Task AddRestaurantId(string listId, TrelloCard card)
@@ -255,10 +256,6 @@ namespace HorecaGhent.Repositories
                         string errorMsg = $"Unsuccesull Put to URL: {url}, object: {json}";
                         throw new Exception(errorMsg);
                     }
-
-                    //string json = await client.GetStringAsync(url);
-                    //TrelloCard item = JsonConvert.DeserializeObject<TrelloCard>(json);
-                    //return item;
                 }
                 catch (Exception ex)
                 {
@@ -283,10 +280,6 @@ namespace HorecaGhent.Repositories
                         string errorMsg = $"Unsuccesull Put to URL: {url}, object: {json}";
                         throw new Exception(errorMsg);
                     }
-
-                    //string json = await client.GetStringAsync(url);
-                    //TrelloCard item = JsonConvert.DeserializeObject<TrelloCard>(json);
-                    //return item;
                 }
                 catch (Exception ex)
                 {
@@ -311,10 +304,6 @@ namespace HorecaGhent.Repositories
                         string errorMsg = $"Unsuccesull Put to URL: {url}, object: {json}";
                         throw new Exception(errorMsg);
                     }
-
-                    //string json = await client.GetStringAsync(url);
-                    //TrelloCard item = JsonConvert.DeserializeObject<TrelloCard>(json);
-                    //return item;
                 }
                 catch (Exception ex)
                 {
@@ -339,10 +328,6 @@ namespace HorecaGhent.Repositories
                         string errorMsg = $"Unsuccesull Put to URL: {url}, object: {json}";
                         throw new Exception(errorMsg);
                     }
-
-                    //string json = await client.GetStringAsync(url);
-                    //TrelloCard item = JsonConvert.DeserializeObject<TrelloCard>(json);
-                    //return item;
                 }
                 catch (Exception ex)
                 {
@@ -367,10 +352,6 @@ namespace HorecaGhent.Repositories
                         string errorMsg = $"Unsuccesull Put to URL: {url}, object: {json}";
                         throw new Exception(errorMsg);
                     }
-
-                    //string json = await client.GetStringAsync(url);
-                    //TrelloCard item = JsonConvert.DeserializeObject<TrelloCard>(json);
-                    //return item;
                 }
                 catch (Exception ex)
                 {
@@ -395,10 +376,6 @@ namespace HorecaGhent.Repositories
                         string errorMsg = $"Unsuccesull Put to URL: {url}, object: {json}";
                         throw new Exception(errorMsg);
                     }
-
-                    //string json = await client.GetStringAsync(url);
-                    //TrelloCard item = JsonConvert.DeserializeObject<TrelloCard>(json);
-                    //return item;
                 }
                 catch (Exception ex)
                 {

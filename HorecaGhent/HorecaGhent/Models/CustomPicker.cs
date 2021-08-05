@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace BikeGates.Models
+namespace HorecaGhent.Models
 {
 	public class CustomPicker : Picker
 	{

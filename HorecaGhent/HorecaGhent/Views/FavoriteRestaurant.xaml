@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HorecaGhent.Views.FavoriteRestaurant"
+             xmlns:controls="clr-namespace:HorecaGhent.Models"
              NavigationPage.HasNavigationBar="False">
 
     <StackLayout BackgroundColor="#171721">
@@ -13,9 +14,24 @@
         <BoxView HeightRequest="2" Margin="0,-6,0,0" BackgroundColor="White"/>
 
         <Frame Margin="32,32,32,32" BackgroundColor="Silver" CornerRadius="20" HasShadow="True">
-            <ListView x:Name="lvwFavorites">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-            </ListView>            
+                <Label Grid.Row="0" Text="Favorite restaurants:" FontSize="20" FontAttributes="Bold" TextColor="Black" Margin="0,0,0,0"/>
+                <ListView Grid.Row="1" x:Name="lvwFavorites" SeparatorColor="Black" RowHeight="50">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding Name}" FontSize="20" TextColor="Black" Margin="0,0,0,-8" VerticalTextAlignment="Center"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            
         </Frame>
             
     </StackLayout>
