@@ -14,46 +14,71 @@
         <BoxView HeightRequest="2" Margin="0,-6,0,0" BackgroundColor="White"/>
 
         <!--Showing all the offers from the restaurant-->
-        <Label Text="Offer:" FontSize="25" FontAttributes="Bold" TextColor="White" Margin="32,16,0,0"/>
-        <Label x:Name="lblOffer" FontSize="20" TextColor="White" Margin="64,0,0,0" LineHeight="1.2">
-            <Label.Text >
-            </Label.Text>
-        </Label>
+        <Frame Margin="32,32,32,0" BackgroundColor="Silver" CornerRadius="20" HasShadow="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Text="Offer:" FontSize="25" FontAttributes="Bold" TextColor="Black" Margin="0,-8,0,0"/>
+                <Label Grid.Row="1" x:Name="lblOffer" FontSize="20" TextColor="Black" Margin="24,0,0,-32" LineHeight="1.2">
+                    <Label.Text >
+                    </Label.Text>
+                </Label>
+            </Grid>
+        </Frame>
+        
 
         <!--Showing all the kitchens from the restaurant-->
-        <Label Text="Kitchens:" FontSize="25" FontAttributes="Bold" TextColor="White" Margin="32,32,0,0"/>
-        <Label x:Name="lblKitchen" FontSize="20" TextColor="White" Margin="64,0,0,0" LineHeight="1.2">
-            <Label.Text >
-            </Label.Text>
-        </Label>
-        
-        <!--Showing the address of the restaurant-->
-        <Label x:Name="lblAddressTitle" Text="Address:" FontSize="25" FontAttributes="Bold" TextColor="White" Margin="32,32,0,0"/>
+        <Frame Margin="32,8,32,0" BackgroundColor="Silver" CornerRadius="20" HasShadow="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Text="Kitchens:" FontSize="25" FontAttributes="Bold" TextColor="Black" Margin="0,-8,0,0"/>
+                <Label Grid.Row="1" x:Name="lblKitchen" FontSize="20" TextColor="Black" Margin="24,0,0,-32" LineHeight="1.2">
+                    <Label.Text >
+                    </Label.Text>
+                </Label>
+            </Grid>
+        </Frame>
 
-        <!--This is for the alignment of the streetname and housenumber-->
-        <Label Grid.Row="0" Grid.Column="0" x:Name="lblAddress" FontSize="20" TextColor="White" TextDecorations="Underline" Margin="32,8,32,0">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="AddressTapped"/>
-            </Label.GestureRecognizers>
-        </Label>
+        <!--Showing the address of the restaurant-->
+        <Frame Margin="32,8,32,0" BackgroundColor="Silver" CornerRadius="20" HasShadow="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" x:Name="lblAddressTitle" Text="Address:" FontSize="25" FontAttributes="Bold" TextColor="Black" Margin="0,-8,0,0"/>
+                <!--This is for the alignment of the streetname and housenumber-->
+                <Label Grid.Row="1" Grid.Column="0" x:Name="lblAddress" FontSize="20" TextColor="Black" TextDecorations="Underline" Margin="24,0,0,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="AddressTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+        </Frame>        
             
         
         <!--Showing the phonenumber of the restaurant-->
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Image Grid.Column="0" HorizontalOptions="Start" Source="{local:ImageResourceExtensions HorecaGhent.Images.Phone.png}" WidthRequest="50" HeightRequest="50"/>
+        <Frame Margin="32,8,32,0" BackgroundColor="Silver" CornerRadius="20" HasShadow="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-
-            <Label Grid.Column="1" x:Name="lblPhoneNumber" FontSize="20" TextColor="White" Margin="32,8,0,0" TextDecorations="Underline">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="PhoneNumberTapped"/>
-                </Label.GestureRecognizers>
-            </Label>
-        </Grid>
-        
+                <Label Grid.Row="0" Text="Phonenumber:" FontSize="25" FontAttributes="Bold" TextColor="Black" Margin="0,-8,0,0"/>
+                <Label Grid.Row="1" x:Name="lblPhoneNumber" FontSize="20" TextColor="Black" TextDecorations="Underline"  Margin="24,0,0,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PhoneNumberTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+        </Frame>
 
         <!--Showing the url of the site from the restaurant-->
         <Label x:Name="lblSiteUrl" FontSize="20" TextColor="White" Margin="32,8,32,0" TextDecorations="Underline">
@@ -62,12 +87,9 @@
             </Label.GestureRecognizers>
         </Label>
 
-        <Button Text="Add to favorites" FontAttributes="Bold" FontSize="20" TextColor="White" BackgroundColor="DarkOrange" CornerRadius="10" Margin="32,0,32,32" Padding="0,8,0,8" VerticalOptions="EndAndExpand" Pressed="Button_Pressed">
-            <Button.GestureRecognizers>
-                <TapGestureRecognizer Tapped="btnAddRestoToFavo_Tapped"/>
-            </Button.GestureRecognizers>
-        </Button>
-        
+        <Button Text="Add to favorites" FontAttributes="Bold" FontSize="20" TextColor="White" BackgroundColor="orange" CornerRadius="10" Margin="32,0,32,32" Padding="0,8,0,8" VerticalOptions="EndAndExpand" Pressed="Button_Pressed"/>
+
+
 
     </StackLayout>
 </ContentPage>

@@ -8,12 +8,11 @@
     <StackLayout BackgroundColor="#171721">
         <!--Topbar-->
         <Grid BackgroundColor="DarkOrange" HeightRequest="100">
-            <Label Text="Horeca Ghent" FontSize="40" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Text="Horeca Ghent" FontSize="30" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
         </Grid>
 
-        <Grid HeightRequest="2" Margin="0,-6,0,0">
-            <BoxView BackgroundColor="White"/>
-        </Grid>
+        <BoxView HeightRequest="2" Margin="0,-6,0,0" BackgroundColor="White"/>
+
 
         <!--Filter for type of kitchen-->
         <Label Text="Type of takeaway:" FontSize="20" TextColor="White" FontAttributes="Bold" Margin="32,8,0,0"/>

@@ -8,8 +8,8 @@
     <StackLayout BackgroundColor="#171721">
         <!--Topbar-->
         <Grid>
-            <BoxView BackgroundColor="DarkOrange" HeightRequest="70"/>
-            <Label x:Name="lblRestaurantName" Text="Favorite Restaurants" FontSize="30" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <BoxView BackgroundColor="DarkOrange" HeightRequest="100"/>
+            <Label Text="Favorite Restaurants" FontSize="30" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
         </Grid>
         <BoxView HeightRequest="2" Margin="0,-6,0,0" BackgroundColor="White"/>
 
@@ -21,11 +21,11 @@
                 </Grid.RowDefinitions>
 
                 <Label Grid.Row="0" Text="Favorite restaurants:" FontSize="20" FontAttributes="Bold" TextColor="Black" Margin="0,0,0,0"/>
-                <ListView Grid.Row="1" x:Name="lvwFavorites" SeparatorColor="Black" RowHeight="50">
+                <ListView Grid.Row="1" x:Name="lvwFavorites" SeparatorColor="Black" RowHeight="50" ItemSelected="lvwFavorites_ItemSelected" SelectionMode="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Label Text="{Binding Name}" FontSize="20" TextColor="Black" Margin="0,0,0,-8" VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding Name}" FontSize="20" TextColor="Black" Margin="0,0,0,0" VerticalTextAlignment="Center"/>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -33,6 +33,7 @@
             </Grid>
             
         </Frame>
-            
+
+        <Button Text="Homescreen" FontAttributes="Bold" FontSize="20" TextColor="White" BackgroundColor="DarkOrange" CornerRadius="10" Margin="32,0,32,32" Padding="0,8,0,8" VerticalOptions="EndAndExpand" Pressed="Button_Pressed"/>
     </StackLayout>
 </ContentPage>

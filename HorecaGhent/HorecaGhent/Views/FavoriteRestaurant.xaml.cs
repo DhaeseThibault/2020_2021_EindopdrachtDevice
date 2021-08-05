@@ -54,6 +54,17 @@ namespace HorecaGhent.Views
             //TrelloCard searchRestaurantSiteUrl = (await HorecaRepository.GetTrelloCardsAsync(trelloLists[6].ListId)).FirstOrDefault();
         }
 
+        private void Button_Pressed(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MainPage());
 
+        }
+
+        private void lvwFavorites_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var selectedRestaurant = (Horeca)lvwFavorites.SelectedItem;
+
+            Navigation.PushAsync(new RestaurantInformation(selectedRestaurant));
+        }
     }
 }

@@ -7,7 +7,6 @@ using System.Windows.Input;
 
 using HorecaGhent.Models;
 using HorecaGhent.Repositories;
-
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -36,6 +35,9 @@ namespace HorecaGhent.Views
 
         private async void TestHorecaRepository()
         {
+            lblOffer.Text = "";
+            lblKitchen.Text = "";
+
             // Showing the restaurant name in the topbar
             lblRestaurantName.Text = horeca1.Name;
 
@@ -60,10 +62,10 @@ namespace HorecaGhent.Views
 
 
             // Showing the restaurant addresss
-            lblAddress.Text = horeca1.Address + ", " + horeca1.ZipCode + " " + horeca1.City;
+            lblAddress.Text = "- " + horeca1.Address + ", " + horeca1.ZipCode + " " + horeca1.City;
 
             // Showing the PhoneNumber of the restaurant
-            lblPhoneNumber.Text = horeca1.PhoneNumber;
+            lblPhoneNumber.Text = "- " +  horeca1.PhoneNumber;
 
             //Showing the URL of the restaurants site
             lblSiteUrl.Text = horeca1.SiteURL;
@@ -92,11 +94,6 @@ namespace HorecaGhent.Views
 
             string url = "https://www.google.be/maps/dir//" + listAddress[0] + "+" + listAddress[1] + ",+" + zipCode + "+" + city + "/@50.9699123,3.5180066,17z / data = !4m9!4m8!1m0!1m5!1m1!1s0x47c374002c8b2249: 0x86cf1a56b6a9fd7d!2m2!1d3.7398261!2d51.0358584!3e0";
             Device.OpenUri(new Uri(url));
-        }
-
-        private void btnAddRestoToFavo_Tapped(object sender, EventArgs e)
-        {
-            
         }
 
         private async void Button_Pressed(object sender, EventArgs e)
@@ -132,6 +129,8 @@ namespace HorecaGhent.Views
             await HorecaRepository.AddRestaurantAddress(trelloLists[0].ListId, newCardAddress);
             await HorecaRepository.AddRestaurantPhoneNumber(trelloLists[0].ListId, newCardPhoneNumber);
             await HorecaRepository.AddRestaurantSiteUrl(trelloLists[0].ListId, newCardSiteUrl);
+
+           
         }
     }
 }

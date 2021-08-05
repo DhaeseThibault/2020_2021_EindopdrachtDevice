@@ -60,5 +60,10 @@ namespace HorecaGhent.Views
 
             Navigation.PushAsync(new RestaurantInformation(selectedRestaurant));
         }
+
+        private void Button_Pressed(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MainPage());
+        }
     }
 }
