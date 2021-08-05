@@ -64,8 +64,17 @@ namespace HorecaGhent.Views
             // Showing the restaurant addresss
             lblAddress.Text = "- " + horeca1.Address + ", " + horeca1.ZipCode + " " + horeca1.City;
 
+            
             // Showing the PhoneNumber of the restaurant
-            lblPhoneNumber.Text = "- " +  horeca1.PhoneNumber;
+            string phoneNumber = horeca1.PhoneNumber;
+            if (phoneNumber != null)
+            {
+                lblPhoneNumber.Text = "- " +  horeca1.PhoneNumber;
+            }
+            else
+            {
+                lblPhoneNumber.Text = "- Not Available";
+            }
 
             //Showing the URL of the restaurants site
             lblSiteUrl.Text = horeca1.SiteURL;
@@ -74,13 +83,19 @@ namespace HorecaGhent.Views
         private void PhoneNumberTapped(object sender, EventArgs e)
         {
             string phoneNumber = horeca1.PhoneNumber;
-            PhoneDialer.Open(phoneNumber);
+            if (phoneNumber != null)
+            {
+                PhoneDialer.Open(phoneNumber);
+            }
         }
 
         private void SiteUrlTapped(object sender, EventArgs e)
         {
             string siteUrl = horeca1.SiteURL;
-            Device.OpenUri(new Uri(siteUrl));
+            if (siteUrl != null)
+            {
+                Device.OpenUri(new Uri(siteUrl));
+            }
         }
 
         private void AddressTapped(object sender, EventArgs e)
@@ -93,7 +108,10 @@ namespace HorecaGhent.Views
 
 
             string url = "https://www.google.be/maps/dir//" + listAddress[0] + "+" + listAddress[1] + ",+" + zipCode + "+" + city + "/@50.9699123,3.5180066,17z / data = !4m9!4m8!1m0!1m5!1m1!1s0x47c374002c8b2249: 0x86cf1a56b6a9fd7d!2m2!1d3.7398261!2d51.0358584!3e0";
-            Device.OpenUri(new Uri(url));
+            if (url != null)
+            {
+                Device.OpenUri(new Uri(url));
+            }
         }
 
         private async void Button_Pressed(object sender, EventArgs e)
