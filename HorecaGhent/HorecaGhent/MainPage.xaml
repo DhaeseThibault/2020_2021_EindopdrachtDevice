@@ -49,11 +49,11 @@
                                         <ColumnDefinition Width="auto"/>
                                         <ColumnDefinition Width="auto"/>
                                     </Grid.ColumnDefinitions>
-                                    
+
                                     <Label Grid.Row="0" Grid.ColumnSpan="4" Text="{Binding Name}"  FontSize="20" TextColor="Black" Margin="0,0,0,-8"/>
 
                                     <Label Grid.Row="1" Grid.Column="0" Text="Kitchen type:" FontSize="15" TextColor="#2D2D2D"/>
-                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding Kitchen}" FontSize="15" TextColor="#2D2D2D"/>
+                                    <Label x:Name="lblKitchens" Grid.Row="1" Grid.Column="1" FontSize="15" TextColor="#2D2D2D"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
@@ -61,7 +61,7 @@
                 </ListView>
             </Grid>
         </Frame>
-        
+
         <!--Button to go to favorite page-->
         <Button Text="Favorite restaurants" FontAttributes="Bold" FontSize="20" TextColor="White" BackgroundColor="DarkOrange" CornerRadius="10" Margin="32,0,32,32" Padding="0,8,0,8" VerticalOptions="EndAndExpand" Pressed="Button_Pressed"/>
     </StackLayout>

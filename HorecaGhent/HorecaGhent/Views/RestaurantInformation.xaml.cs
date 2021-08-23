@@ -62,18 +62,18 @@ namespace HorecaGhent.Views
 
 
             // Showing the restaurant addresss
-            lblAddress.Text = "- " + horeca1.Address + ", " + horeca1.ZipCode + " " + horeca1.City;
+            lblAddress.Text = horeca1.Address + ", " + horeca1.ZipCode + " " + horeca1.City;
 
             
             // Showing the PhoneNumber of the restaurant
             string phoneNumber = horeca1.PhoneNumber;
             if (phoneNumber != null)
             {
-                lblPhoneNumber.Text = "- " +  horeca1.PhoneNumber;
+                lblPhoneNumber.Text = horeca1.PhoneNumber;
             }
             else
             {
-                lblPhoneNumber.Text = "- Not Available";
+                lblPhoneNumber.Text = "Not Available";
             }
 
             //Showing the URL of the restaurants site
@@ -147,8 +147,11 @@ namespace HorecaGhent.Views
             await HorecaRepository.AddRestaurantAddress(trelloLists[0].ListId, newCardAddress);
             await HorecaRepository.AddRestaurantPhoneNumber(trelloLists[0].ListId, newCardPhoneNumber);
             await HorecaRepository.AddRestaurantSiteUrl(trelloLists[0].ListId, newCardSiteUrl);
+        }
 
-           
+        private void imgBackBtn(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MainPage());
         }
     }
 }

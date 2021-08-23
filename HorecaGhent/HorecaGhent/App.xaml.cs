@@ -11,7 +11,6 @@ namespace HorecaGhent
         {
             InitializeComponent();
             MainPage = new NavigationPage(new MainPage());
-            //MainPage = new NavigationPage(new RestaurantInformation());
         }
 
         protected override void OnStart()

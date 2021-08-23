@@ -9,9 +9,6 @@ using HorecaGhent.Models;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-//using Microsoft.Azure.Cosmos;
-using Microsoft.Azure.Cosmos.Table;
-
 namespace HorecaGhent.Repositories
 {
     public class HorecaRepository

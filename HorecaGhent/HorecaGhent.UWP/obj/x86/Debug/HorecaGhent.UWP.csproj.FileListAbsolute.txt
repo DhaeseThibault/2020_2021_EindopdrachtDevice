@@ -343,3 +343,11 @@ C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent.UWP\
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent.UWP\obj\x86\Debug\FxResources.System.Memory.SR.resw
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent.UWP\obj\x86\Debug\FxResources.System.Security.Cryptography.ProtectedData.SR.resw
 C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent.UWP\obj\x86\Debug\FxResources.System.Security.Permissions.SR.resw
+C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent.UWP\bin\x86\Debug\Plugin.LocalNotification.dll
+C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent.UWP\bin\x86\Debug\System.Text.Encodings.Web.dll
+C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent.UWP\bin\x86\Debug\System.Text.Json.dll
+C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent.UWP\obj\x86\Debug\Plugin.LocalNotification\en\Plugin.LocalNotification.Properties.Resources.resw
+C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent.UWP\obj\x86\Debug\FxResources.System.Text.Encodings.Web.SR.resw
+C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent.UWP\obj\x86\Debug\FxResources.System.Text.Json.SR.resw
+C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent.UWP\obj\x86\Debug\resources.en.resfiles
+C:\Users\thibault.dhaese\Desktop\EindopdrachtDevice\HorecaGhent\HorecaGhent.UWP\obj\x86\Debug\resources.en.resfiles.intermediate

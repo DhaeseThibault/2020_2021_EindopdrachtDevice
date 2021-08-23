@@ -27,8 +27,6 @@ namespace HorecaGhent.Models
         private void ProcessExtraJsonData(StreamingContext context)
         {
             JToken fieldData = (JToken)_fieldData["fields"];
-            //JToken RestaurantId = (JToken)_fieldData["recordid"];
-            //RestaurantId = ;
             Name = (string)fieldData.SelectToken("naam");
             Offer = (string)fieldData.SelectToken("aanbod");
             Kitchen = (string)fieldData.SelectToken("keuken");

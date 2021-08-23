@@ -22,12 +22,27 @@ namespace HorecaGhent
             //TestHorecaRepository();
         }
 
+        private Horeca horeca1;
+        public MainPage(Horeca horeca)
+        {
+            InitializeComponent();
+            horeca1 = horeca;
+        }
+
         private async void TestHorecaRepository()
         {
             List<Horeca> listHorecaNames = await HorecaRepository.GetHorecas();
             lvwRestaurants.ItemsSource = listHorecaNames;
 
             ListTakeAway.Clear();
+
+            //string kitchenString = horeca1.Kitchen.ToString();
+            //string[] kitchens = kitchenString.Split(';');
+
+            //for (int i = 0; i < kitchens.Length; i++)
+            //{
+            //    lblKitchens.Text += kitchens[i];
+            //}
             
         }
 

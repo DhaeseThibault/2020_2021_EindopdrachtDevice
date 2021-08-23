@@ -2,14 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HorecaGhent.Views.FavoriteRestaurant"
-             xmlns:controls="clr-namespace:HorecaGhent.Models"
+             xmlns:local1="clr-namespace:HorecaGhent.Models"
              NavigationPage.HasNavigationBar="False">
 
     <StackLayout BackgroundColor="#171721">
         <!--Topbar-->
-        <Grid>
-            <BoxView BackgroundColor="DarkOrange" HeightRequest="100"/>
-            <Label Text="Favorite Restaurants" FontSize="30" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <!--<Label Text="Favorite Restaurants" FontSize="30" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>-->
+
+
+        <Grid BackgroundColor="DarkOrange" HeightRequest="85">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" HorizontalOptions="Start" Source="{local1:ImageResourceExtensions HorecaGhent.Images.ArrowBack.png}" WidthRequest="35" HeightRequest="35" Margin="16,0,0,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="imgBackBtn"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Grid.Column="1" Text="Favorite Restaurants" FontSize="28" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" Margin="-51,0,0,0"/>
         </Grid>
         <BoxView HeightRequest="2" Margin="0,-6,0,0" BackgroundColor="White"/>
 
@@ -33,7 +44,5 @@
             </Grid>
             
         </Frame>
-
-        <Button Text="Homescreen" FontAttributes="Bold" FontSize="20" TextColor="White" BackgroundColor="DarkOrange" CornerRadius="10" Margin="32,0,32,32" Padding="0,8,0,8" VerticalOptions="EndAndExpand" Pressed="Button_Pressed"/>
     </StackLayout>
 </ContentPage>
