@@ -53,7 +53,7 @@
                                     <Label Grid.Row="0" Grid.ColumnSpan="4" Text="{Binding Name}"  FontSize="20" TextColor="Black" Margin="0,0,0,-8"/>
 
                                     <Label Grid.Row="1" Grid.Column="0" Text="Kitchen type:" FontSize="15" TextColor="#2D2D2D"/>
-                                    <Label x:Name="lblKitchens" Grid.Row="1" Grid.Column="1" FontSize="15" TextColor="#2D2D2D"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding Kitchen}"  FontSize="15" TextColor="#2D2D2D"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

@@ -47,11 +47,7 @@ namespace HorecaGhent.Views
 
             List<TrelloCard> searchRestaurantName = (await HorecaRepository.GetTrelloCardsAsync(trelloLists[1].ListId));
             lvwFavorites.ItemsSource = searchRestaurantName;
-            //TrelloCard searchRestaurantOffer = (await HorecaRepository.GetTrelloCardsAsync(trelloLists[2].ListId)).FirstOrDefault();
-            //TrelloCard searchRestaurantKitchen = (await HorecaRepository.GetTrelloCardsAsync(trelloLists[3].ListId)).FirstOrDefault();
-            //TrelloCard searchRestaurantAddress = (await HorecaRepository.GetTrelloCardsAsync(trelloLists[4].ListId)).FirstOrDefault();
-            //TrelloCard searchRestaurantPhoneNumber = (await HorecaRepository.GetTrelloCardsAsync(trelloLists[5].ListId)).FirstOrDefault();
-            //TrelloCard searchRestaurantSiteUrl = (await HorecaRepository.GetTrelloCardsAsync(trelloLists[6].ListId)).FirstOrDefault();
+
         }
 
         private void Button_Pressed(object sender, EventArgs e)

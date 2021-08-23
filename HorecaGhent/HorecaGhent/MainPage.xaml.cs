@@ -35,15 +35,6 @@ namespace HorecaGhent
             lvwRestaurants.ItemsSource = listHorecaNames;
 
             ListTakeAway.Clear();
-
-            //string kitchenString = horeca1.Kitchen.ToString();
-            //string[] kitchens = kitchenString.Split(';');
-
-            //for (int i = 0; i < kitchens.Length; i++)
-            //{
-            //    lblKitchens.Text += kitchens[i];
-            //}
-            
         }
 
         protected override void OnAppearing()
@@ -65,7 +56,8 @@ namespace HorecaGhent
             }
         }
 
-        private void LvwRestaurant_ItemSelected(object sender, SelectedItemChangedEventArgs e)        {
+        private void LvwRestaurant_ItemSelected(object sender, SelectedItemChangedEventArgs e)        
+        {
             var selectedRestaurant = (Horeca)lvwRestaurants.SelectedItem;
             
 
